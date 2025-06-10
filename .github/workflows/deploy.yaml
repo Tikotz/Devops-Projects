@@ -30,17 +30,13 @@ jobs:
 
       - name: terraform plan 
         id: plan
-        run: terraform plan -out=tfplan
-        working-directory: ./terraform
-
-      - name: Apply Terraform changes
         run: |- 
           terraform plan \
           -var="aws_region=${{ env.AWS_REGION }}" \
           -var="public_key=${{ env.PUBLIC_SSH_KEY }}" \
           -var="private_key=${{ env.PRIVATE_SSH_KEY }}" \
           -var="key_name=deployer-key" \
-          -out=plan
+          -out=PLAN
         working-directory: ./terraform
       - name: Terraform apply
         id: apply
