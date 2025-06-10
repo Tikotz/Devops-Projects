@@ -1,5 +1,5 @@
 variable "region" {
-    default = "us-east-1"
+    default = "eu-north-1"
 }
 variable "public_key" {
     description = "The public key for SSH access to the instance"
