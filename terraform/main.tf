@@ -80,9 +80,8 @@ resource "aws_security_group" "maingroup" {
 }
 
 resource "aws_key_pair" "deployer" {
-    key_name = var.key_name
+    key_name   = var.key_name
     public_key = var.public_key
-  
 }
 
 output "instance_public_ip" {
