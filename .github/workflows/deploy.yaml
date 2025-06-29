@@ -10,6 +10,7 @@ env:
   PRIVATE_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PRIVATE }}
   PUBLIC_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PUBLIC }}
   AWS_REGION: "eu-north-1"
+  AWS_REGION: eu-north-1
 
 jobs:
   deploy:
@@ -33,8 +34,8 @@ jobs:
         run: |- 
           terraform plan \
           -var="region=eu-north-1" \
-          -var="public_key=${{ env.PUBLIC_SSH_KEY }}" \
-          -var="private_key=${{ env.PRIVATE_SSH_KEY }}" \
+          -var="public_key=$PUBLIC_SSH_KEY" \
+          -var="private_key=$PRIVATE_SSH_KEY" \
           -var="key_name=deployer-key" \
           -out=PLAN
         working-directory: ./terraform
