@@ -10,7 +10,6 @@ env:
   PRIVATE_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PRIVATE }}
   PUBLIC_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PUBLIC }}
   AWS_REGION: "eu-north-1"
-  AWS_REGION: eu-north-1
 
 jobs:
   deploy:
